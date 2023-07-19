@@ -1,4 +1,5 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+# from pydantic import dataclass
 from typing import Optional
 
 
@@ -25,7 +26,6 @@ class B:
 class C(A, B):
     c_1: int = 3
     c_2: int
-    kwargs: field(default_factory=dict) = None
 
     def __post_init__(self):
         print("__post_init__ for class C called:", self)
